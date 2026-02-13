@@ -16,7 +16,7 @@ This template repository is the starter project for Programming in Science Assig
       - submit your responses in the one .py file, use comments (`#`) to describe your answer in between your python code.
         
 ### Tasks (Complete for EACH Question)
-   
+   ```java
     1. Code: add main funtion block at the end of each question which uses all functions as provided by teacher solution
     
     2. Understanding: identify: inputs, outputs, main variables, functions used
@@ -33,7 +33,7 @@ This template repository is the starter project for Programming in Science Assig
 
       - add a new feature
 ###### WARNING: Do NOT use any advanced design choice/tool which is not yet covered in class. 
-
+```
 ### Submission Format
 
 For each question:
@@ -78,6 +78,7 @@ Q4. **(25%)** Sum of Even Numbers in a Range:
 ### Run Command
 
 `pytest`
+
 
 
 
