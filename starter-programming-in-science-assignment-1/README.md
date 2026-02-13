@@ -17,7 +17,7 @@ This template repository is the starter project for Programming in Science Assig
         
 ### Tasks (Complete for EACH Question)
    
-    1. Code: add main funtion block at the end of each question which uses all functions as provided in the teacher's solution
+    1. Code: add main funtion block at the end of each question which uses all functions as provided by teacher solution
     
     2. Understanding: identify: inputs, outputs, main variables, functions used
     
@@ -34,7 +34,7 @@ This template repository is the starter project for Programming in Science Assig
       - add a new feature
 ### Submission Format
 
-      For each question:
+For each question:
 ```java
 Question X
 
@@ -76,6 +76,7 @@ Task 3 – Modification
 ### Run Command
 
 `pytest`
+
 
 
 
