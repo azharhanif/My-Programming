@@ -48,11 +48,11 @@ Task 3 – Modification
 
 ### Question(s)
 
-1. **(25%)** Conditional Statements – The ```If``` Statement:
+Q1. **(25%)** Conditional Statements – The ```If``` Statement:
 
    - Write a function that checks if a number is positive, negative, or zero and returns a corresponding message.
 
-2. **(25%)** For Loop – Making a Star Shape:
+Q2. **(25%)** For Loop – Making a Star Shape:
 
    - Write a function that prints a star shape with a given number of rows using a ```for``` loop. For example, if the input is 5, the output should look like this:
 
@@ -64,11 +64,11 @@ Task 3 – Modification
    *****
    ```
 
-3. **(25%)** While Loop – Counting Multiples of 3:
+Q3. **(25%)** While Loop – Counting Multiples of 3:
 
    - Write a function that counts from 1 to ```limit``` using a ```while``` loop. For every number that is a multiple of 3, the function should return "Multiple of 3" instead of the number.
 
-4. **(25%)** Sum of Even Numbers in a Range:
+Q4. **(25%)** Sum of Even Numbers in a Range:
 
    - Write a function that takes a start and an end value and calculates the sum of all even numbers within that range.
 
@@ -76,6 +76,7 @@ Task 3 – Modification
 ### Run Command
 
 `pytest`
+
 
 
 
