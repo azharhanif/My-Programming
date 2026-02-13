@@ -13,7 +13,7 @@ This template repository is the starter project for Programming in Science Assig
 4. Every answer must include:
       - your explanation in your own words,
       - evidence of experimentation or modification
-      - submit your responses in the one .py file, use # 'Learning Task' as comments to describe your answer in between your python          code.
+      - submit your responses in the one .py file, use comments (`#`) to describe your answer in between your python code.
         
 ### Tasks (Complete for EACH Question)
    
@@ -76,4 +76,5 @@ Task 3 – Modification
 ### Run Command
 
 `pytest`
+
 
