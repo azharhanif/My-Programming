@@ -32,7 +32,7 @@ This template repository is the starter project for Programming in Science Assig
       - improve output formatting
 
       - add a new feature
-   4. Submission Format
+### Submission Format
 
       For each question:
 ```java
@@ -76,5 +76,6 @@ Task 3 – Modification
 ### Run Command
 
 `pytest`
+
 
 
