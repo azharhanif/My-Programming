@@ -33,7 +33,7 @@ The **variable** takes the value of each item in the **sequence** for each itera
 Example:
 ```python
 # Iterating through a list of numbers
-numbers = [1, 2, 3, 4, 5]
+numbers = [101, 1032, 223, 4002, 5000000]
 for number in numbers:
     print(number)
 ```
@@ -180,3 +180,4 @@ while count < 5:
 ```
 
 By using debugging techniques, such as checking variable values and testing edge cases, you can ensure that your loops behave as expected and perform the correct number of iterations.
+
