@@ -140,4 +140,112 @@ if numbers:
     print("Updated numbers:", updated_numbers)
 else:
     print("The list is empty!")
+
 ```
+
+## Multiple user inputs into a list in Python
+```java
+def get_list_from_user():
+    try:
+        # Ask user for input in one line, separated by spaces
+        raw_input = input("Enter values separated by spaces: ").strip()
+
+        # Handle empty input
+        if not raw_input:
+            print("No input provided. Returning an empty list.")
+            return []
+
+        # Convert to list (default: strings)
+        items = raw_input.split()
+
+        # Optional: Try converting to integers if possible
+        converted_items = []
+        for item in items:
+            try:
+                converted_items.append(int(item))  # Convert to int
+            except ValueError:
+                converted_items.append(item)  # Keep as string if not a number
+
+        return converted_items
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
+```
+#### Example usage
+```java
+if __name__ == "__main__":
+    user_list = get_list_from_user()
+    print("Your list:", user_list)
+```
+#### How It Works:
+Single-line input: User enters values separated by spaces (e.g., 10 20 apple 30).
+
+Splitting: .split() breaks the string into a list.
+
+Type conversion: 
+
+    Tries to convert each value to an integer; 
+
+    if it fails, keeps it as a string.
+
+Validation: Handles empty input and unexpected errors.
+
+#### Example Runs:
+```java
+Enter values separated by spaces: 5 10 15
+Your list: [5, 10, 15]
+
+Enter values separated by spaces: apple banana 42
+Your list: ['apple', 'banana', 42]
+
+Enter values separated by spaces: 
+No input provided. Returning an empty list.
+Your list: []
+```
+## Taking multiple inputs from user in Python
+#### Using input() and split()
+One of the simplest ways to take multiple inputs from a user in Python is by using the input() function along with the split() method. The split() method splits a string into a list based on a specified separator (by default, it uses whitespace).
+
+Example:
+```java
+# taking two inputs at a time
+x, y, z = input("Values: ").split()
+print(x)
+print(y)
+print(z)
+```
+#### How it Works:
+input() takes the full input as a single string.
+
+.split() divides the string into separate components based on whitespace by default.
+
+The values are assigned to individual variables (x, y, z).
+
+#### Taking Multiple Inputs in a Loop
+If you want to collect multiple inputs from the user one at a time, you can use a loop. This is particularly useful when you need to collect an arbitrary number of inputs or perform validation on each input.
+```java
+# Create an empty list to store the inputs
+a = []
+
+# Ask the user for how many items they want to input
+b = int(input("How many items do you want to enter? "))
+
+# Loop to collect multiple inputs
+for i in range(b):
+    val = input(f"Enter item {i + 1}: ")
+    a.append(val)
+
+
+for i in a:
+    print(i)
+```
+#### Explanation:
+
+We first ask how many items the user wants to input.
+
+We then use a loop to take inputs one by one, appending each input to a list.
+
+After the loop finishes, we print the collected items.
+
+This approach gives the user the flexibility to enter as many items as needed.
