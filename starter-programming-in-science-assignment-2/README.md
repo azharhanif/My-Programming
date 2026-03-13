@@ -2,6 +2,18 @@
 
 This is the starter project for Programming in Science Assignment 2. Written in Python and tested with Pytest.
 
+**Total score=100**
+
+**Grading:** 
+
+60% on the submitted code
+
+40% on the post-submission challange
+
+**What is post-submission challange?**
+
+After final code submission there will be an in class code verification challenges built from the submitted project. The challange is designed to fit a 5-10 minute pen-and-paper coding task, and will test high-level understanding, not memorization.
+
 ### Question(s)
 
 1. **(20%)** Lists - Removing Duplicates and Sorting:
