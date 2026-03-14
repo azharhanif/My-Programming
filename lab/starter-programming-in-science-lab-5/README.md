@@ -54,7 +54,7 @@ Student-specific variation
 Because shift and k depend on the student ID, outputs differ for every student
 
 ```
-✅ **Required details** Use nested `while` loops to build the pattern.
+✅ **Required details** 
 ```
 •	Do not overwrite the original list.
 
