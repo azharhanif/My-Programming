@@ -1,51 +1,64 @@
-# Programming in Science - Lab 5
+# Programming in Science - Lab 5 — Sensor List Builder and Calibrator
 
-This template repository is the starter project for Programming in Science Lab 5. Written in Python, and tested with Pytest.
+Lecture 7 introduces lists, indexing, slicing, DRY, arithmetic on lists, sum(), list comprehensions, zip(), and collecting multiple user inputs into a list. 
 
 ### Question(s) 
+A student is recording simple sensor readings from a lab bench and building a calibration list.
+### Scenario ###
+Each student must compute these three personalization values from their student ID before starting:
 
-1. Write a function `hollow_square(n)` that returns a string representing a hollow square pattern of stars (`*`) with side length `n`.
+•	d1 = last digit of student ID
 
-#### Example (n = 5):
-```
-*****
-*   *
-*   *
-*   *
-*****
-```
-✅ **Hints:** Use a `while` loop and construct each line, appending them to a result string.
+•	d2 = second-last digit of student ID
 
-2. Write a function `number_pattern(n)` that returns a string representing a number pattern of height `n` **without using a `for` loop inside the print statement**.
+•	k = (d1 + d2) % 4 + 2
 
-#### Example (n = 4):
-```
-1
-12
-123
-1234
-```
-✅ **Hints:** Use nested `while` loops to build the pattern.
+•	shift = d1 - d2
 
-3. Write a function `sum_of_natural_numbers(n)` that **returns the sum** of the first `n` natural numbers using a `while` loop.
+•	rows_keep = (d1 % 2) + 2
 
-#### Example:
-For `n = 5`:
-```
-Sum = 1 + 2 + 3 + 4 + 5 = 15
-```
-✅ **Hints:** Use a counter variable and accumulate the total.
+#### Students must include these values at the top of every submission and use them in their code. This forces outputs to differ across students.####
 
-4. Write a function `centered_star_pyramid(n)` that returns a string representing a centered pyramid of stars (`*`) with height `n`.
+#### Build from the lecture 7 examples (50 marks)
+```
+Write a program that:
+•	asks the user how many readings they will enter,
+•	stores the readings in a list,
+•	prints:
+o	the full list,
+o	the first reading,
+o	the last reading,
+o	the slice from index 1 to index 3 if it exists,
+o	the sum of the list.
 
-#### Example (n = 4):
 ```
-   *
-  ***
- *****
-*******
+✅ **Required details**
+
+•	Must use a loop to collect values one by one.
+
+•	Must handle the case where the list is empty.
+
+•	Must label every printed result clearly.
+
+#### Component B — ID-based modification (50 marks)
 ```
-✅ **Hints:** Use spaces before stars to center the pyramid.
+Using the same list:
+•	create a second list where every reading is increased by shift,
+•	create a third list where every reading is multiplied by k,
+•	print the element-wise sum of the original list and the shifted list using zip().
+
+Student-specific variation
+Because shift and k depend on the student ID, outputs differ for every student
+
+```
+✅ **Required details** Use nested `while` loops to build the pattern.
+
+•	Do not overwrite the original list.
+
+•	Print all three lists with labels.
+
+•	If the list lengths do not match for any reason, explain why zip() still works the way it does.
+
 
 ### Run Command
 
