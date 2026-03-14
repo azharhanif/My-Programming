@@ -1,4 +1,5 @@
-# Programming in Science - Lab 5 — Sensor List Builder and Calibrator
+# Programming in Science - Lab 5 
+## Sensor List Builder and Calibrator
 
 Lecture 7 introduces lists, indexing, slicing, DRY, arithmetic on lists, sum(), list comprehensions, zip(), and collecting multiple user inputs into a list. 
 
