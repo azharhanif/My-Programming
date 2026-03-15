@@ -142,3 +142,23 @@ rectangular_matrix = [
 # Slice first two rows and first three columns
 print([row[:3] for row in rectangular_matrix])  # Output: [[1, 2, 3], [5, 6, 7]]
 ```
+#### Additional materials on Strings: 
+```
+String operations
+
+String Slicing
+
+Searcing/testing strings
+
+Spliting/joining String
+```
+https://openstax.org/books/introduction-python-programming/pages/8-introduction
+#### Additional materials on Lists: 
+```
+Modifying and iterating lists
+
+Sorting and reversing lists
+
+Common list operations
+```
+https://openstax.org/books/introduction-python-programming/pages/9-introduction
