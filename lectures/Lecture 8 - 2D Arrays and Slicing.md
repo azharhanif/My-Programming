@@ -6,7 +6,7 @@
 2. [Creating and Accessing Two-Dimensional Arrays](#creating-and-accessing-two-dimensional-arrays)
 3. [Slicing in Two-Dimensional Arrays](#slicing-in-two-dimensional-arrays)
 4. [Debugging and Testing Two-Dimensional Arrays and Slicing](#debugging-and-testing-two-dimensional-arrays-and-slicing)
-5. [Additional materials on Strings and List operations](#additional materials on Strings and List operations)
+5. [Additional materials on Strings and List operations](#additional-materials-on-Strings-and-List-operations)
 ### 1. **Introduction to Two-Dimensional Arrays**
 
 A **two-dimensional array** is a data structure that can store a grid or matrix of values, organized into rows and columns. In Python, two-dimensional arrays are commonly represented using **lists of lists**. Each element in a two-dimensional array is accessed using two indices: one for the row and one for the column.
