@@ -6,7 +6,7 @@
 2. [Creating and Accessing Two-Dimensional Arrays](#creating-and-accessing-two-dimensional-arrays)
 3. [Slicing in Two-Dimensional Arrays](#slicing-in-two-dimensional-arrays)
 4. [Debugging and Testing Two-Dimensional Arrays and Slicing](#debugging-and-testing-two-dimensional-arrays-and-slicing)
-
+5. [Additional materials on Strings and List operations](#additional materials on Strings and List operations)
 ### 1. **Introduction to Two-Dimensional Arrays**
 
 A **two-dimensional array** is a data structure that can store a grid or matrix of values, organized into rows and columns. In Python, two-dimensional arrays are commonly represented using **lists of lists**. Each element in a two-dimensional array is accessed using two indices: one for the row and one for the column.
@@ -142,7 +142,8 @@ rectangular_matrix = [
 # Slice first two rows and first three columns
 print([row[:3] for row in rectangular_matrix])  # Output: [[1, 2, 3], [5, 6, 7]]
 ```
-#### Additional materials on Strings: 
+### 5. **Additional materials on Strings and List operations**
+#### 5.1 Additional materials on Strings: 
 ```
 String operations
 
@@ -153,7 +154,7 @@ Searcing/testing strings
 Spliting/joining String
 ```
 https://openstax.org/books/introduction-python-programming/pages/8-introduction
-#### Additional materials on Lists: 
+#### 5.2 Additional materials on Lists: 
 ```
 Modifying and iterating lists
 
