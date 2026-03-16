@@ -144,66 +144,6 @@ else:
 ```
 
 ## Multiple user inputs into a list in Python
-```java
-def get_list_from_user():
-    try:
-        # Ask user for input in one line, separated by spaces
-        raw_input = input("Enter values separated by spaces: ").strip()
-
-        # Handle empty input
-        if not raw_input:
-            print("No input provided. Returning an empty list.")
-            return []
-
-        # Convert to list (default: strings)
-        items = raw_input.split()
-
-        # Optional: Try converting to integers if possible
-        converted_items = []
-        for item in items:
-            try:
-                converted_items.append(int(item))  # Convert to int
-            except ValueError:
-                converted_items.append(item)  # Keep as string if not a number
-
-        return converted_items
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return []
-```
-#### Example usage
-```java
-if __name__ == "__main__":
-    user_list = get_list_from_user()
-    print("Your list:", user_list)
-```
-#### How It Works:
-Single-line input: User enters values separated by spaces (e.g., 10 20 apple 30).
-
-Splitting: .split() breaks the string into a list.
-
-Type conversion: 
-
-    Tries to convert each value to an integer; 
-
-    if it fails, keeps it as a string.
-
-Validation: Handles empty input and unexpected errors.
-
-#### Example Runs:
-```java
-Enter values separated by spaces: 5 10 15
-Your list: [5, 10, 15]
-
-Enter values separated by spaces: apple banana 42
-Your list: ['apple', 'banana', 42]
-
-Enter values separated by spaces: 
-No input provided. Returning an empty list.
-Your list: []
-```
-## Taking multiple inputs from user in Python
 #### Using input() and split()
 One of the simplest ways to take multiple inputs from a user in Python is by using the input() function along with the split() method. The split() method splits a string into a list based on a specified separator (by default, it uses whitespace).
 
