@@ -1,8 +1,17 @@
 # Programming in Science - Assignment 3 
-Python Scientific Visualization (Based on Lecture 10 and Lecture 11) Total= 100
+Python Scientific Visualization (Based on Lecture 10 and Lecture 11) 
 
 This is the starter project for Programming in Science Assignment 3. Written in Python and tested with Pytest.
+**Total 100: Grading** 
+```
+60% on the submitted code
 
+40% on the post-submission challange
+
+**What is post-submission challange?**
+
+After final code submission there will be an in class code verification challenges built from the submitted project. The challange is designed to fit a 5-10 minute pen-and-paper coding task, and will test high-level understanding, not memorization.
+```
 ### Theme
 You are a junior science lab assistant studying the motion and signal behavior of a small experimental system.
 
