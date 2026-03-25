@@ -35,18 +35,18 @@ Write two functions:
  
 ```
 The first must:
-
+```
 read a CSV with length and amplitude,
 
 compute and print mean amplitude and maximum amplitude.
-
+```
 The second must:
-
+```
 read a CSV with length and tension,
 
 compute wave speed using:
 `v = sqrt(T / 1)`.
-
+```
 #### Component B — ID-based modification (50 marks)
 Create personalized versions of both input files:
 ##### Oscillatory file
