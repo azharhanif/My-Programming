@@ -9,8 +9,11 @@ You are a junior science lab assistant studying the motion and signal behavior o
 You will create:
 
 @ a 2D line plot
+
 @ a 2D density-style / distribution visualization
+
 @ a 3D scatter plot
+
 @ a simple animation
 
 Your work must be personalized using your student ID, so each student produces different numerical results and slightly different graphs.
@@ -69,7 +72,7 @@ y = x squared
      ```
      x is not empty
      len(x) == len(y)
-   ```
+     ```
 ##### Required output
 
 A clean line graph similar to the Lecture 10 example.
