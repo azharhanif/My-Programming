@@ -10,7 +10,7 @@ This is the starter project for Programming in Science Assignment 3. Written in 
 
 **What is post-submission challange?**
 
-After final code submission there will be an in class code verification challenges built from the submitted project. The challange is designed to fit a 5-10 minute pen-and-paper coding task, and will test high-level understanding, not memorization.
+After final code submission there will be an in class code verification challenges built from the submitted project. The challange is designed to fit a 5-10 minute coding task, and will test high-level understanding, not memorization.
 ```
 ### Theme
 You are a junior science lab assistant studying the motion and signal behavior of a small experimental system.
