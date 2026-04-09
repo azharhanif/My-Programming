@@ -1,4 +1,4 @@
-# Programming in Science - Lab 10
+# Programming in Science - Lab 09
 
 This template repository is the starter project for **Programming in Science Lab 10**. Written in Python and tested with Pytest.
 
