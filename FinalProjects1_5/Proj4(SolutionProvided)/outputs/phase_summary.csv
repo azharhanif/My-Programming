@@ -1,0 +1,4 @@
+Site,Mean_Temp,Mean_pH,Mean_DO,Max_DO,Min_DO,Warning_Count,First_Warning_Time
+river_site_A,17.2,7.39,8.8,9.22,8.47,0,None
+river_site_B,19.62,7.0,8.55,8.96,8.09,0,None
+river_site_C,21.46,6.8,8.34,8.81,7.91,0,None
