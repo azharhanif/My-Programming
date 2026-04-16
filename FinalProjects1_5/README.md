@@ -11,7 +11,7 @@ Total 100: Grading rubric will follow as instructed in the project description.
 
 ### 50% on the submitted code
 
-### 50% on the Presentation coding challenge on your scheduled presentation
+### 50% on the Presentation coding challenge 
 
 **What is Presentation coding challenge?**
 
