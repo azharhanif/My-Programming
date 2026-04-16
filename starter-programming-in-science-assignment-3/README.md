@@ -2,6 +2,7 @@
 Python Scientific Visualization (Based on Lecture 10 and Lecture 11) 
 
 This is the starter project for Programming in Science Assignment 3. Written in Python and tested with Pytest.
+
 **Total 100: Grading** 
 ```
 50% on the submitted code
