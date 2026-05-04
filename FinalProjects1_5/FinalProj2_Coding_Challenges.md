@@ -1,4 +1,4 @@
-# Coding Challenges (Sample)
+# Coding Challenges (practice, no need to submit)
 
 ## Phase 1  
 Add a function that counts how many recorded points have `Y_m > 5`.
