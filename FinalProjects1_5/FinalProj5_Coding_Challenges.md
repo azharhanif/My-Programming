@@ -1,4 +1,4 @@
-# Coding Challenges 
+# Coding Challenges (Sample)
 
 ## Phase 1 
 Add a function that counts how many brightness values are below `0.99`.
