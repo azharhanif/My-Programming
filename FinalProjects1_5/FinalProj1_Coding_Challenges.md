@@ -1,4 +1,4 @@
-# Coding Challenges (Sample)
+# Coding Challenges (practice, no need to submit)
 
 ## Phase 1 
 Add a function `count_above_threshold(counts, threshold)` that returns how many count values are above a chosen threshold.
