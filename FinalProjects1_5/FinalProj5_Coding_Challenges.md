@@ -1,32 +1,33 @@
-# Coding Challenges (practice, no need to submit)
+# Post-Submission Challenges 
 
 ## Phase 1 
-Add a function that counts how many brightness values are below `0.99`.
+Count how many rows have `Viability_pct > 85`.
 
 ### solution
 ```python
-def count_low_brightness(values):
+def count_high_viability(values):
     total = 0
     for v in values:
-        if v < 0.99:
+        if v > 85:
             total += 1
     return total
 ```
 
 ## Phase 2 
-Add a summary column `Brightness_Range = max_brightness - min_brightness`.
+Add a summary column `Count_Gap = final_count - first_count`.
 
-### solution
+###  solution
 ```python
-summary_df["Brightness_Range"] = summary_df["Max_Brightness"] - summary_df["Min_Brightness"]
+summary_df["Count_Gap"] = summary_df["Final_Cell_Count"] - summary_df["First_Cell_Count"]
 ```
 
 ## Phase 3 
-Filter rows where `Relative_Brightness < sample_mean` and `Time_hr` is between 10 and 20.
+Filter rows where `Cell_Count > mean_count` and `Viability_pct < mean_viability`.
 
 ### solution
 ```python
-m = df["Relative_Brightness"].mean()
-filtered = df[(df["Relative_Brightness"] < m) & (df["Time_hr"] >= 10) & (df["Time_hr"] <= 20)]
+mc = df["Cell_Count"].mean()
+mv = df["Viability_pct"].mean()
+filtered = df[(df["Cell_Count"] > mc) & (df["Viability_pct"] < mv)]
 print(filtered)
 ```
