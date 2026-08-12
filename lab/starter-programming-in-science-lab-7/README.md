@@ -20,7 +20,6 @@ Each student must compute these three personalization values from their student 
 
 Students must include these values at the top of every submission and use them in their code. 
 
-This forces outputs to differ across students.
 ```
 #### Component A: Build from the lecture 8 examples (50 marks)
 ```
