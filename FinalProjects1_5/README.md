@@ -1,4 +1,4 @@
-# Final Projects 1-5 Winter 26
+# Final Projects 1-5 Fall 26
 
 This package contains the 5 final projects.
 
