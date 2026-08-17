@@ -5,9 +5,9 @@ This is the starter project for Programming in Science Assignment 3. Written in 
 
 **Total 100: Grading** 
 ```
-50% on the submitted code
+40% on the submitted code
 
-50% on the post-submission challange
+60% on the post-submission challange
 
 **What is post-submission challange?**
 
