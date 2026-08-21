@@ -1,0 +1,381 @@
+# Lecture 8: 2D Arrays and Slicing
+
+### **Table of Contents**
+
+1. [Introduction to Two-Dimensional Arrays](#introduction-to-two-dimensional-arrays)
+2. [Creating and Accessing Two-Dimensional Arrays](#creating-and-accessing-two-dimensional-arrays)
+3. [Slicing in Two-Dimensional Arrays](#slicing-in-two-dimensional-arrays)
+4. [Debugging and Testing Two-Dimensional Arrays and Slicing](#debugging-and-testing-two-dimensional-arrays-and-slicing)
+5. [Additional materials on Strings and List operations](#additional-materials-on-Strings-and-List-operations)
+### 1. **Introduction to Two-Dimensional Arrays**
+
+A **two-dimensional array** is a data structure that can store a grid or matrix of values, organized into rows and columns. In Python, two-dimensional arrays are commonly represented using **lists of lists**. Each element in a two-dimensional array is accessed using two indices: one for the row and one for the column.
+
+For example, a 2D array with 3 rows and 4 columns can be visualized as follows:
+
+```
+[ [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12] ]
+```
+
+Here, there are 3 lists (rows), and each list contains 4 elements (columns).
+
+### 2. **Creating and Accessing Two-Dimensional Arrays**
+
+To create a **two-dimensional array** in Python, you can define a list of lists. Each inner list represents a row of the array.
+
+#### Example of Creating a 2D Array:
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+You can access elements of a 2D array by using two indices: one for the row and one for the column.
+
+#### Accessing an Element:
+```python
+# Access element in the first row, second column (indexing starts at 0)
+element = matrix[0][1]
+print(element)  # Output: 2
+```
+
+In the example above:
+- `matrix[0]` refers to the first row (`[1, 2, 3]`).
+- `matrix[0][1]` refers to the second element in the first row, which is `2`.
+
+#### Modifying an Element:
+You can modify an element in a two-dimensional array by accessing its position using row and column indices:
+```python
+# Modify the element in the second row, third column
+matrix[1][2] = 10
+print(matrix[1])  # Output: [4, 5, 10]
+```
+
+### 3. **Slicing in Two-Dimensional Arrays**
+
+**Slicing** allows you to access a subset of elements from a list or array. In the case of two-dimensional arrays, slicing enables you to extract rows, columns, or sub-arrays (a block of rows and columns).
+
+#### Slicing Rows:
+You can slice a two-dimensional array to access specific rows. For example, to get the first two rows of a matrix:
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Slice to get the first two rows
+sub_matrix = matrix[:2]
+print(sub_matrix)  # Output: [[1, 2, 3], [4, 5, 6]]
+```
+
+Here, `matrix[:2]` slices the matrix from the start up to (but not including) the second index, giving us the first two rows.
+
+#### Slicing Columns:
+To slice columns, you can iterate over each row and slice the desired columns.
+```python
+# Get the first column from each row
+first_column = [row[0] for row in matrix]
+print(first_column)  # Output: [1, 4, 7]
+```
+
+Here, a **list comprehension** is used to extract the first element (column) of each row.
+
+#### Slicing a Sub-Array (Sub-Matrix):
+You can also slice a sub-array (a specific range of rows and columns). For example, to get the first two rows and the first two columns:
+```python
+sub_array = [row[:2] for row in matrix[:2]]
+print(sub_array)  # Output: [[1, 2], [4, 5]]
+```
+
+Here:
+- `matrix[:2]` slices the first two rows.
+- `row[:2]` slices the first two elements (columns) from each of the selected rows.
+
+### 4. **Debugging and Testing Two-Dimensional Arrays and Slicing**
+
+When working with two-dimensional arrays and slicing, it’s essential to test your code to ensure you're accessing and modifying the array correctly.
+
+#### Debugging with Print Statements:
+Use **print statements** to verify the content of the array or sub-array during slicing. This will help ensure that you’re extracting the correct rows and columns.
+
+Example:
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Debugging: Print the full matrix and sub-array
+print("Full matrix:", matrix)
+sub_matrix = matrix[:2]
+print("Sub-matrix (first two rows):", sub_matrix)
+```
+
+#### Testing Edge Cases:
+- **Empty arrays**: Check how your code handles cases where the array is empty or contains no rows.
+- **Slicing beyond bounds**: Test how your code behaves when you slice beyond the available number of rows or columns.
+
+Example of an edge case (empty matrix):
+```python
+empty_matrix = []
+
+# Slicing an empty matrix should return an empty list
+print(empty_matrix[:2])  # Output: []
+```
+
+#### Testing Slicing on Non-Square Matrices:
+Make sure to test slicing with matrices where the number of rows and columns is not equal, such as a **rectangular array**.
+
+Example:
+```python
+rectangular_matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8]
+]
+
+# Slice first two rows and first three columns
+print([row[:3] for row in rectangular_matrix])  # Output: [[1, 2, 3], [5, 6, 7]]
+```
+### 5. **Additional materials on Strings and List operations**
+#### 5.1 Additional materials on Strings: 
+```
+String operations
+
+String Slicing
+
+Searcing/testing strings
+
+Spliting/joining String
+```
+https://openstax.org/books/introduction-python-programming/pages/8-introduction
+#### 5.2 Additional materials on Lists: 
+```
+Modifying and iterating lists
+
+Sorting and reversing lists
+
+Common list operations
+```
+https://openstax.org/books/introduction-python-programming/pages/9-introduction
+
+---
+
+
+## New-Semester Learning Cycle
+
+For each major example, use this sequence:
+
+1. **Read the problem**
+2. **Predict** what the code should do
+3. **Trace** the important variables
+4. **Code** the smallest working version
+5. **Run and inspect**
+6. **Debug** one problem at a time
+7. **Modify** the solution
+8. **Explain the design choice**
+
+The goal is not to make the course easier. The goal is to make the reasoning visible so that a student who is still developing programming fluency can follow the path from a scientific problem to a correct Python solution.
+
+
+---
+
+# Lecture 8: Two-Dimensional Arrays and Slicing
+
+## 0. Why a 2D structure?
+
+A list represents a sequence.
+
+A 2D list represents a grid:
+
+```text
+row 0:  1 2 3
+row 1:  4 5 6
+row 2:  7 8 9
+```
+
+In Python this is commonly represented as a list of lists.
+
+## 1. Indexing Requires Two Decisions
+
+```python
+matrix[1][2]
+```
+
+means:
+
+```text
+row 1 → [4,5,6]
+column 2 → 6
+```
+
+Always identify the row first, then the column.
+
+## 2. Predict Before Running
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matrix[0][1] = 20
+print(matrix)
+```
+
+Predict the complete matrix.
+
+## 3. Nested Loops
+
+```python
+for row in matrix:
+    for value in row:
+        print(value)
+```
+
+This is often the clearest way to visit every element.
+
+If indices are needed:
+
+```python
+for r in range(len(matrix)):
+    for c in range(len(matrix[r])):
+        print(r, c, matrix[r][c])
+```
+
+## 4. Row vs Column
+
+A row is easy:
+
+```python
+matrix[1]
+```
+
+A column requires visiting each row:
+
+```python
+column = [row[1] for row in matrix]
+```
+
+This distinction is fundamental.
+
+## 5. Slicing
+
+Rows:
+
+```python
+matrix[:2]
+```
+
+First two rows.
+
+Columns:
+
+```python
+[row[1:3] for row in matrix]
+```
+
+Columns 1 and 2 from every row.
+
+Submatrix:
+
+```python
+[row[:2] for row in matrix[:2]]
+```
+
+## 6. A Common Conceptual Trap
+
+This:
+
+```python
+sub = matrix[:2]
+```
+
+creates a new outer list, but its rows still refer to the original row lists.
+
+Students should distinguish:
+
+```text
+new outer list
+```
+
+from:
+
+```text
+independent deep copy of every row
+```
+
+## 7. Rectangular Matrices
+
+Do not assume:
+
+```python
+len(matrix) == len(matrix[0])
+```
+
+A matrix can be:
+
+```python
+[
+    [1, 2, 3, 4],
+    [5, 6, 7, 8]
+]
+```
+
+It has 2 rows and 4 columns.
+
+## 8. Scientific Example
+
+Suppose rows represent experiments and columns represent measurements:
+
+```python
+data = [
+    [20.1, 20.4, 20.2],
+    [21.0, 20.8, 21.1],
+    [19.9, 20.0, 20.2]
+]
+```
+
+A useful design question is:
+
+> Does `data[1]` represent a measurement, an experiment, or a feature vector?
+
+The answer depends on the data model you choose.
+
+## 9. Active-Learning Questions
+
+1. What does `matrix[2][1]` mean?
+2. How do you extract a column?
+3. Why does a nested loop have two levels?
+4. What happens if the matrix has no rows?
+5. Why might a rectangular matrix break code that assumes a square matrix?
+
+## 10. Challenge
+
+Given a rectangular matrix, write functions that return:
+
+```python
+row_sum(matrix, row_index)
+column_sum(matrix, column_index)
+```
+
+Then write:
+
+```python
+find_largest(matrix)
+```
+
+that searches every element.
+
+Test:
+
+- normal matrix;
+- one-row matrix;
+- one-column matrix;
+- empty matrix.
