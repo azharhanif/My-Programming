@@ -1,6 +1,5 @@
 # Lecture 11 — 3D Graphs and Animations
 
-> **New-semester teaching approach:** Explain → Predict → Trace → Code → Run → Debug → Modify → Explain
 
 ## Table of Contents
 
