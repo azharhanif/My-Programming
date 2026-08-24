@@ -60,6 +60,4 @@ Enter time for car (in seconds): 3
 The car will travel 60 meters in 3 seconds.
 ```
 
-### Run Command
 
-`pytest`
