@@ -5,6 +5,8 @@
 **Submitted code: 40 marks**  
 **Post-submission code-verification challenge: 60 marks**
 
+**For post-submission, each student download your original submitted code from the Assignment section, add new codes, answers (in comments) and finally upload again in the Assignment 1 post-submission**
+
 > **Important:** Pytest is introduced with this assignment. You are now moving from manual testing to automated verification.
 
 ## Purpose
@@ -106,7 +108,7 @@ print:
 
 Validate that `rows` is not negative.
 
-### Post-submission challenge
+### Post-submission challenge idea
 Reverse the pattern without rewriting the function from scratch.
 
 ---
@@ -130,7 +132,7 @@ Multiple of 3
 
 Otherwise print the number.
 
-### Post-submission challenge
+### Post-submission challenge idea
 Change the function so that it counts how many multiples of 3 occurred and returns the count.
 
 ---
@@ -167,19 +169,6 @@ Explain your chosen behavior when `start > end`.
 
 ---
 
-# AI Reflection
-
-If you use AI, document:
-
-1. what you asked;
-2. what suggestion you received;
-3. what you tested;
-4. what you changed or rejected.
-
-A generated answer is not evidence of understanding.
-
----
-
 # Submission
 
 Submit:
@@ -187,4 +176,4 @@ Submit:
 - one `.py` file;
 - required comments;
 - pytest tests;
-- AI reflection.
+
