@@ -2,10 +2,9 @@
 ## Control Flow, Loops, and Functions
 
 **Total: 100 marks**  
-**Submitted code: 40 marks**  
-**Post-submission code-verification challenge: 60 marks**
+**Submitted code: 70 marks**  
+**Post-submission challenge: 30 marks**
 
-**For post-submission, each student download your original submitted code from the Assignment section, add new codes, answers (in comments) and finally upload again in the Assignment 1 post-submission**
 
 > **Important:** Pytest is introduced with this assignment. You are now moving from manual testing to automated verification.
 
@@ -67,7 +66,7 @@ Return:
 
 Test negative, zero, and positive values.
 
-### Post-submission challenge idea
+### Post-submission challenge idea (add this modified function as mod_classify_number(number))
 Modify the function to classify numbers into:
 
 ```text
@@ -108,7 +107,7 @@ print:
 
 Validate that `rows` is not negative.
 
-### Post-submission challenge idea
+### Post-submission challenge idea (add this modified function as mod_print_star_shape(rows))
 Reverse the pattern without rewriting the function from scratch.
 
 ---
@@ -132,7 +131,7 @@ Multiple of 3
 
 Otherwise print the number.
 
-### Post-submission challenge idea
+### Post-submission challenge idea (add this modified function as mod_describe_multiples(limit))
 Change the function so that it counts how many multiples of 3 occurred and returns the count.
 
 ---
@@ -155,7 +154,7 @@ sum_even(1, 10) → 30
 sum_even(4, 8) → 18
 ```
 
-### Required edge cases
+### Required edge cases (add in pytest file)
 
 Test:
 
