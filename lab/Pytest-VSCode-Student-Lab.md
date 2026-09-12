@@ -10,11 +10,13 @@ The goal is to learn this complete cycle:
 > **Write code → Predict → Write a test → Run pytest → Read the result →
 > Debug → Fix → Test again**
 
-By the end you should be able to: - install and run pytest; - write a
-simple pytest test; - understand `assert`; - recognize passing and
-failing tests; - read a pytest failure message; - add test cases; - run
-tests from the VS Code Testing interface; - understand basic pytest test
-discovery.
+By the end you should be able to: 
+- install and run pytest;
+- write a simple pytest test;
+- understand `assert`; - recognize passing and failing tests;
+- read a pytest failure message;
+- add test cases;
+- run tests from the VS Code Testing interface;
 
 ------------------------------------------------------------------------
 
