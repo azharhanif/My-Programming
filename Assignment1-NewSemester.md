@@ -1,4 +1,4 @@
-# Programming in Science — Assignment 1
+# Programming in Science — Assignment 1 (group of 2 allowed)
 ## Control Flow, Loops, and Functions
 
 **Total: 100 marks**  
