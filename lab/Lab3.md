@@ -1,4 +1,4 @@
-# Programming in Science — Lab 4
+# Programming in Science — Lab 3
 ## Conditional Reasoning: Valid Days and Scientific Decision Rules
 
 **Estimated time:** 70–85 minutes
