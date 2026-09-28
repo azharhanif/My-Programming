@@ -149,8 +149,6 @@ For numeric data:
 x, y, z = map(float, input("Values: ").split())
 ```
 
-This is a useful place to slow down and explain type conversion.
-
 ## 9. Active-Learning Questions
 
 1. Why does `values[-1]` access the final element?
