@@ -177,9 +177,9 @@ First write the algorithm in plain language. Then code it.
 
 ## 11. Design Question
 
-A student writes five nearly identical loops for five lists.
+If you write five nearly identical loops for five lists.
 
-Ask:
+Ques:
 
 > Is this a data problem, a loop problem, or a function-design problem?
 
