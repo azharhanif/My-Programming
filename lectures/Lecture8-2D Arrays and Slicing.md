@@ -109,7 +109,9 @@ matrix[:2]
 output:
 [[1, 2, 3], [4, 5, 6]]
 ```
-Explanation: [:2] selects rows from the beginning up to, but not including, index 2. Therefore, it selects the first two rows.
+Explanation: 
+
+`[:2]` selects rows from the beginning up to, but not including, index 2. Therefore, it selects the first two rows.
  
 
 Columns:
