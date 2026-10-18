@@ -142,26 +142,31 @@ Here, `matrix[:2]` selects the first two rows, and
 
 `row[:2]` selects the first two elements of each selected row.
 
-## 6. A Common Conceptual Trap
+## 6. A Common Conceptual Trap: Advanced topic
 
-This:
+A shallow copy of a 2D list creates a new outer list, but the inner lists are still shared.
+#### What happens with sub = matrix[:2]?
+Consider this matrix:
+```
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-```python
 sub = matrix[:2]
 ```
-
-creates a new outer list, but its rows still refer to the original row lists.
-
-Students should distinguish:
-
-```text
-new outer list
+The expression matrix[:2] creates a new outer list containing the first two rows.
 ```
-
-from:
-
-```text
-independent deep copy of every row
+print(sub)
+```
+Output:
+```
+[[1, 2, 3], [4, 5, 6]]
+```
+At first glance, sub looks like a separate matrix. However, its inner rows are still shared with matrix.
+```
+<img width="867" height="267" alt="image" src="https://github.com/user-attachments/assets/4027e496-3e71-46f8-b2ff-fb4d88c8efa2" />
 ```
 
 ## 7. Rectangular Matrices
