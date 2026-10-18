@@ -134,19 +134,11 @@ Submatrix:
 output:
 [[1, 2], [4, 5]]
 ```
-This selects the top-left \(2 \times 2\) submatrix
-\[
-\begin{bmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
-7 & 8 & 9
-\end{bmatrix}
-\quad\longrightarrow\quad
-\begin{bmatrix}
-1 & 2\\
-4 & 5
-\end{bmatrix}
-\]
+This selects the top-left `2 x 2` submatrix
+
+Here, `matrix[:2]` selects the first two rows, and 
+
+`row[:2]` selects the first two elements of each selected row.
 
 ## 6. A Common Conceptual Trap
 
