@@ -105,23 +105,48 @@ Rows:
 
 ```python
 matrix[:2]
-```
 
-First two rows.
+output:
+[[1, 2, 3], [4, 5, 6]]
+```
+Explanation: [:2] selects rows from the beginning up to, but not including, index 2. Therefore, it selects the first two rows.
+ 
 
 Columns:
 
 ```python
 [row[1:3] for row in matrix]
-```
 
-Columns 1 and 2 from every row.
+output:
+[[2, 3], [5, 6], [8, 9]]
+
+```
+Explanation:
+- for `row` in matrix visits each `row`.
+- `row[1:3]` selects elements at indices 1 and 2 from each `row`.
+- The list comprehension collects these slices into a new list.
 
 Submatrix:
 
 ```python
 [row[:2] for row in matrix[:2]]
+
+output:
+[[1, 2], [4, 5]]
 ```
+This selects the top-left \(2 \times 2\) submatrix
+\[
+\begin{bmatrix}
+1 & 2 & 3\\
+4 & 5 & 6\\
+7 & 8 & 9
+\end{bmatrix}
+\quad\longrightarrow\quad
+\begin{bmatrix}
+1 & 2\\
+4 & 5
+\end{bmatrix}
+\]
 
 ## 6. A Common Conceptual Trap
 
