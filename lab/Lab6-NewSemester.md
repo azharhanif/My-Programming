@@ -8,7 +8,7 @@
 - reason about row and column indexes;
 - slice rows and columns;
 - avoid aliasing mistakes;
-- modify selected rows/columns safely.
+ 
 
 ### Personalization
 
