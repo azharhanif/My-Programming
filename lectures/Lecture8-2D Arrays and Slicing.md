@@ -165,9 +165,77 @@ Output:
 [[1, 2, 3], [4, 5, 6]]
 ```
 At first glance, sub looks like a separate matrix. However, its inner rows are still shared with matrix.
+#### The surprising part: changing an element
+Run this code:
 ```
-<img width="867" height="267" alt="image" src="https://github.com/user-attachments/assets/4027e496-3e71-46f8-b2ff-fb4d88c8efa2" />
+matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+sub = matrix[:2]
+sub[0][0] = 99
+print(sub)
+print(matrix)
 ```
+Output:
+```
+[[99, 2, 3], [4, 5, 6]]
+[[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+Why did `matrix` change too?
+- `sub[0]` refers to the same inner list as `matrix[0]`.
+- `sub[0][0] = 99` modifies that shared inner list.
+- Both outer lists therefore show the updated value.
+#### But changing an outer-list element behaves differently
+Now try:
+```
+matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+sub = matrix[:2]
+sub[0] = [100, 200, 300]
+print(sub)
+print(matrix)
+
+```
+Output:
+```
+[[100, 200, 300], [4, 5, 6]]
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+This time, matrix remains unchanged.
+
+Why? The statement `sub[0] = ...` replaces an element in the new outer list. 
+
+It does not modify the original first row.
+
+Compare the two operations:
+```
+Code	                    What changes?	                            Does matrix change?
+sub[0][0] = 99	            An element inside a shared row	            Yes
+sub[0] = [100, 200, 300]	A row reference in the new outer list	    No
+```
+#### How do we make every row independent?
+If you want to change sub without affecting matrix, copy each row as well:
+```
+matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+sub = [row[:] for row in matrix[:2]]
+sub[0][0] = 99
+print(sub)
+print(matrix)
+```
+Output:
+```
+[[99, 2, 3], [4, 5, 6]]
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+Here:
+- `matrix[:2]` selects the first two rows.
+- `row[:]` creates a separate copy of each selected row.
+- Therefore, changing an element in sub does not change the corresponding element in matrix.
+  
+For a matrix containing only numbers or strings, this is sufficient to make the rows independent.
+
+**The rule to remember:** 
+`matrix[:2]` copies the outer list structure, not the inner row lists. 
+
+To independently copy the rows, use `[row[:] for row in matrix[:2]]`.
 
 ## 7. Rectangular Matrices
 
