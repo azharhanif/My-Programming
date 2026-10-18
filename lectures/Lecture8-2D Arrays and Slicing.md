@@ -168,7 +168,7 @@ At first glance, sub looks like a separate matrix. However, its inner rows are s
 #### The surprising part: changing an element
 Run this code:
 ```
-matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
 sub = matrix[:2]
 sub[0][0] = 99
 print(sub)
@@ -187,7 +187,7 @@ Why did `matrix` change too?
 #### But changing an outer-list element behaves differently
 Now try:
 ```
-matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
 sub = matrix[:2]
 sub[0] = [100, 200, 300]
 print(sub)
@@ -214,7 +214,7 @@ sub[0] = [100, 200, 300]	A row reference in the new outer list	    No
 #### How do we make every row independent?
 If you want to change sub without affecting matrix, copy each row as well:
 ```
-matrix = [    [1, 2, 3],    [4, 5, 6],    [7, 8, 9]]
+matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
 sub = [row[:] for row in matrix[:2]]
 sub[0][0] = 99
 print(sub)
