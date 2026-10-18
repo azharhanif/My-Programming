@@ -102,25 +102,4 @@ print(grid)
 Explain why slicing the outer list does not create independent inner lists.
 
 ---
-
-## Part F — Challenge
-
-Write:
-
-```python
-def column_values(matrix, column):
-    ...
-```
-
-Return the selected column as a new list.
-
-Then write:
-
-```python
-def add_to_row(matrix, row, amount):
-    ...
-```
-
-Do not silently change the wrong row.
-
-Explain how you prevent index errors.
+ 
