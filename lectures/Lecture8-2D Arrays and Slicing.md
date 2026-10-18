@@ -256,24 +256,52 @@ A matrix can be:
 
 It has 2 rows and 4 columns.
 
-## 8. Scientific Example
+## 8. Blood Glucose Measurements in a Health Science Laboratory
 
-Suppose rows represent experiments and columns represent measurements:
+Suppose a health science class conducts three laboratory experiments to measure blood glucose levels (in mmol/L). 
 
-```python
+Each experiment records measurements at three different time points.
+```
 data = [
-    [20.1, 20.4, 20.2],
-    [21.0, 20.8, 21.1],
-    [19.9, 20.0, 20.2]
+    [5.2, 5.8, 5.5],  # Experiment 1
+    [6.1, 6.4, 6.0],  # Experiment 2
+    [4.9, 5.1, 5.0]   # Experiment 3
 ]
 ```
+In this data model, each row represents one experiment, and each column represents a measurement time point.
+For example:
+```
+Experiment	        Time 1	Time 2	Time 3
+Experiment 1	    5.2	    5.8	    5.5
+Experiment 2	    6.1	    6.4	    6.0
+Experiment 3	    4.9	    5.1	    5.0
+```
+Now consider:
+```
+print(data[1])
+```
+Output:
+```
+[6.1, 6.4, 6.0]
+```
+This gives all three glucose measurements from **Experiment 2**.
 
 A useful design question is:
+```
+Does `data[1]` represent a patient, a laboratory experiment, or a measurement time point?
+```
+The answer depends on how the data is organized. 
 
-> Does `data[1]` represent a measurement, an experiment, or a feature vector?
+In our example, `data[1]` represents **Experiment 2**, because each row corresponds to one experiment. 
 
-The answer depends on the data model you choose.
+If instead,
+- each row represented a patient and
+- each column represented a different health indicator (such as glucose level, heart rate, and blood pressure)
+- then `data[1]` would represent the second patient's measurements.
 
+**Key lesson:** Before working with a `2D list`, decide what each row and each column represents. 
+
+A clear data model makes your Python code easier to understand, interpret, and maintain.
 ## 9. Active-Learning Questions
 
 1. What does `matrix[2][1]` mean?
