@@ -78,6 +78,27 @@ column = [row[1] for row in matrix]
 
 This distinction is fundamental.
 
+Explanation
+- 1. print(matrix[1])
+
+matrix[1] selects the second row because Python indexing starts at 0.
+```
+[4, 5, 6]
+```
+- 2. print([row[1] for row in matrix])
+This list comprehension selects the element at index 1 (the second column) from every row.
+```
+Row	                row[1]
+[1, 2, 3]	        2
+[4, 5, 6]	        5
+[7, 8, 9]	        8
+```
+Therefore, the result is:
+[2, 5, 8]
+
+Key difference: matrix[1] selects an entire row, 
+
+while [row[1] for row in matrix] selects one element from each row, forming the second column.
 ## 5. Slicing
 
 Rows:
