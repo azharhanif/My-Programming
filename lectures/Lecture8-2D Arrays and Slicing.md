@@ -96,9 +96,9 @@ Row	                row[1]
 Therefore, the result is:
 [2, 5, 8]
 
-Key difference: matrix[1] selects an entire row, 
+Key difference: `matrix[1]` selects an entire row, 
 
-while [row[1] for row in matrix] selects one element from each row, forming the second column.
+while `[row[1] for row in matrix]` selects one element from each row, forming the second column.
 ## 5. Slicing
 
 Rows:
