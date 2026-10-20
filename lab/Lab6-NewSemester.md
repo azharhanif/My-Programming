@@ -37,7 +37,7 @@ Print:
 4. first column;
 5. upper-left 2×2 sub-array.
 
-Before coding, draw the row/column indexes.
+ 
 
 ---
 
