@@ -20,7 +20,9 @@ shift = d1 - d2
 rows_keep = (d1 % 2) + 2
 ```
 
-Print these values.
+- Write these values in as comment in the beginning of your .py file
+- Use one student id of any group member, if you are submitting in a group.
+
 
 ---
 
