@@ -110,6 +110,65 @@ values = [float(row[1]) for row in reader]
 
 provided column 1 contains numeric values.
 
+#### 4.1 Can newline be something else?
+Yes. Python's `open()` function has a newline parameter that controls how newline characters are handled when reading or writing a file.
+```
+Value	                  Behaviour when reading
+newline=None	Default.   Python converts \r, \n, and \r\n into \n.
+newline=""	             Python recognizes different newline styles but returns them untranslated.
+newline="\n"	           Only \n is treated as a line ending; other newline styles are not translated.
+newline="\r"	           Only \r is treated as a line ending.
+newline="\r\n"	         Only \r\n is treated as a line ending.
+```
+Here, `\n` represents a line feed, `\r` represents a carriage return, and `\r\n` is the traditional Windows line-ending sequence.
+
+These are all valid examples:
+```
+open("sample_students.csv", "r", newline=None)
+open("sample_students.csv", "r", newline="")
+open("sample_students.csv", "r", newline="\n")
+open("sample_students.csv", "r", newline="\r\n")
+```
+However, for CSV files, the recommended practice is:
+```
+with open("sample_students.csv", "r", newline="") as file:
+```
+When writing CSV files, the same setting is important:
+```
+import csv
+
+with open("output.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["student_id", "name", "score"])
+    writer.writerow([1001, "Amina", 87])
+```
+**Takeaway:** `newline=""` does not remove newlines. 
+
+It disables Python's automatic newline translation so the csv module can handle them correctly.
+#### 4.2 Why does the CSV module recommend newline=""?
+Consider this CSV file:
+```
+student_id,name,comment
+1001,Amina,"Likes Python
+and data science"
+1002,Daniel,"Enjoys programming"
+```
+Notice that Amina's comment spans two physical lines, but it belongs to one CSV record.
+
+When you write:
+```
+import csv
+
+with open("sample_students.csv", "r", newline="") as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        print(row)
+```
+The CSV reader can correctly interpret the line break inside the quoted field.
+
+If you omit `newline=""`, Python's default newline conversion can interfere with the CSV module's handling of newline characters.
+
 ## 5. File-to-List Example
 
 Suppose `numbers.txt` contains:
