@@ -163,6 +163,56 @@ Are numeric fields actually numeric?
 Are required columns present?
 Are values within scientific limits?
 ```
+#### 7.1. Example: CSV file with missing values
+Suppose sample_students.csv contains:
+```
+student_id,name,program,score
+1001,Amina,Science,87
+1002,Daniel,Computer Science,
+1003,Sofia,,78
+1004,Marcus,Computer Science,85
+1005,Leila,Science,95
+```
+There are two missing values:
+- Daniel has no score.
+- Sofia has no program.
+  
+When reading with csv.reader(), Python represents an empty CSV field as an empty string "".
+```
+import csv
+with open("sample_students.csv", "r", newline="") as file:
+     reader = csv.reader(file)
+     for row in reader:
+        print(row)
+```
+For Daniel, the output is:
+```
+['1002', 'Daniel', 'Computer Science', '']
+
+```
+Notice that the missing score is '', not None and not 0.
+#### 7.2. Check for empty strings
+This is the simplest method.
+```
+import csv
+
+with open("sample_students.csv", "r", newline="") as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip the header
+
+    for row in reader:
+        student_id = row[0]
+        name = row[1]
+        program = row[2]
+        score_text = row[3]
+
+        if score_text == "":
+            print(name, "has no recorded score")
+        else:
+            score = float(score_text)
+            print(name, "scored", score)
+```
+This avoids trying to convert an empty string to a number, which would cause a `ValueError`.
 
 ## 8. Active-Learning Example
 
