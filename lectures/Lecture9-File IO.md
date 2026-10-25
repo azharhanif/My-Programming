@@ -114,7 +114,7 @@ provided column 1 contains numeric values.
 Yes. Python's `open()` function has a newline parameter that controls how newline characters are handled when reading or writing a file.
 ```
 Value	                  Behaviour when reading
-newline=None	Default.   Python converts \r, \n, and \r\n into \n.
+newline=None	           Default. Python converts \r, \n, and \r\n into \n.
 newline=""	             Python recognizes different newline styles but returns them untranslated.
 newline="\n"	           Only \n is treated as a line ending; other newline styles are not translated.
 newline="\r"	           Only \r is treated as a line ending.
