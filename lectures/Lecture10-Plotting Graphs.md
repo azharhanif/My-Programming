@@ -1,5 +1,6 @@
 # Lecture 10 Extension: Plotting Graphs --- From CSV Data to Visual Evidence
 
+
 **Tools:** Python, its built-in `csv` module, Matplotlib, and optional
 Seaborn\
 **Sample files:** The accompanying `data/` folder
@@ -106,14 +107,21 @@ the values be strings or numbers?
 import csv
 
 with open("data/weather_readings.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+
     for row in reader:
         print(row)
 ```
 
-`csv.DictReader` uses the first row as column names. Each row is
-returned as a dictionary. Values read from a CSV file are strings, even
-if they look like numbers.
+The first row contains the column headings. The remaining rows contain
+the observations. Each row is a list, and each item is a string---even
+if it looks like a number.
+
+For this file, the column positions are:
+
+-   index `0`: hour;
+-   index `1`: measured temperature;
+-   index `2`: model temperature.
 
 ### Example 2 --- Convert columns to numeric lists
 
@@ -125,11 +133,13 @@ measured = []
 model = []
 
 with open("data/weather_readings.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+    next(reader)  # Skip the heading row
+
     for row in reader:
-        hours.append(int(row["hour"]))
-        measured.append(float(row["measured_temp_c"]))
-        model.append(float(row["model_temp_c"]))
+        hours.append(int(row[0]))
+        measured.append(float(row[1]))
+        model.append(float(row[2]))
 
 print("Hours:", hours)
 print("Measured:", measured)
@@ -139,11 +149,12 @@ print("Number of observations:", len(hours))
 
 **Why convert?** Plotting and numerical calculations require numeric
 values. The string `"18.7"` is not the same data type as the number
-`18.7`.
+`18.7`. The program uses list indexes such as `row[0]` and `row[1]` to
+access columns.
 
 ### Checkpoint 1
 
-1.  What are the column names in the CSV file?
+1.  What are the column headings in the CSV file?
 2.  Why do we use `int()` for `hour` and `float()` for temperature?
 3.  What would happen if we tried to calculate `"18.7" + 2`?
 4.  Why should we inspect the data before creating a graph?
@@ -270,10 +281,12 @@ study_hours = []
 quiz_scores = []
 
 with open("data/study_hours_scores.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+    next(reader)  # Skip the heading row
+
     for row in reader:
-        study_hours.append(float(row["study_hours"]))
-        quiz_scores.append(float(row["quiz_score"]))
+        study_hours.append(float(row[1]))
+        quiz_scores.append(float(row[2]))
 
 print(study_hours)
 print(quiz_scores)
@@ -324,10 +337,12 @@ days = []
 units_sold = []
 
 with open("data/weekly_sales.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+    next(reader)  # Skip the heading row
+
     for row in reader:
-        days.append(row["day"])
-        units_sold.append(int(row["units_sold"]))
+        days.append(row[0])
+        units_sold.append(int(row[1]))
 
 plt.figure(figsize=(8, 5))
 plt.bar(days, units_sold)
@@ -366,9 +381,11 @@ import csv
 
 scores = []
 with open("data/exam_scores.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+    next(reader)  # Skip the heading row
+
     for row in reader:
-        scores.append(float(row["score"]))
+        scores.append(float(row[0]))
 
 print("Number of scores:", len(scores))
 print("Minimum:", min(scores))
@@ -452,10 +469,12 @@ readings = []
 temperatures = []
 
 with open("data/sensor_readings_needs_cleaning.csv", "r", newline="") as file:
-    reader = csv.DictReader(file)
+    reader = csv.reader(file)
+    next(reader)  # Skip the heading row
+
     for row in reader:
-        readings.append(int(row["reading"]))
-        value = row["temperature_c"]
+        readings.append(int(row[0]))
+        value = row[1]
         if value == "":
             temperatures.append(None)
         else:
@@ -566,23 +585,23 @@ for value in values:
 
 ## 11. Plot selection guide
 
-  -----------------------------------------------------------------------
-  Question                            Suitable plot
-  ----------------------------------- -----------------------------------
-  How does a measurement change over  Line plot
-  time?                               
+  ---------------------------------------------------------------------
+  Question                           Suitable plot
+  ---------------------------------- ----------------------------------
+  How does a measurement change over Line plot
+  time?                              
 
-  Do two numerical variables appear   Scatter plot
-  related?                            
+  Do two numerical variables appear  Scatter plot
+  related?                           
 
-  How do categories compare?          Bar chart
+  How do categories compare?         Bar chart
 
-  How are numerical observations      Histogram
-  distributed across intervals?       
+  How are numerical observations     Histogram
+  distributed across intervals?      
 
-  What is a smoothed estimate of a    Density plot (KDE)
-  numerical distribution?             
-  -----------------------------------------------------------------------
+  What is a smoothed estimate of a   Density plot (KDE)
+  numerical distribution?            
+  ---------------------------------------------------------------------
 
 No plot is automatically best. Choose one based on the question and the
 structure of the data.
@@ -596,7 +615,7 @@ dataset.
 Your program must:
 
 1.  Read the CSV file.
-2.  Identify the columns and data types you need.
+2.  Identify the column positions and data types you need.
 3.  Check for missing or suspicious values.
 4.  Choose a plot that suits a specific question.
 5.  Add a meaningful title and axis labels, including units where
