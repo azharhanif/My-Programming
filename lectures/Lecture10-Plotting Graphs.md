@@ -1,9 +1,5 @@
 # Lecture 10 Extension: Plotting Graphs --- From CSV Data to Visual Evidence
 
-**Course:** Programming in Science\
-**Prerequisite:** OpenStax, *Introduction to Python Programming*, §15.1,
-"Introduction to Data Science"\
-**Suggested duration:** Two class periods, or one 100--120 minute lab\
 **Tools:** Python, its built-in `csv` module, Matplotlib, and optional
 Seaborn\
 **Sample files:** The accompanying `data/` folder
