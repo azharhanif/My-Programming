@@ -104,8 +104,10 @@ Your graph must include:
 Save the graph as `weather_comparison.png`.
 
 **Analysis:** Calculate the mean absolute error (MAE) between measured and model temperatures:
- 
+
 ![MAE](MAE.png)
+
+
 Print the MAE with an appropriate label and unit.
 
 ## Q2 — Investigate study hours and quiz scores (10 marks)
