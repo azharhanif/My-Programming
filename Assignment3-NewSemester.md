@@ -1,46 +1,30 @@
 # Programming in Science — Assignment 3
-
-## File I/O, Data Science, and Data Visualization
+## Data Science, Pandas, NumPy, and Data Visualization
 
 **Total: 100 marks**  
 **Code submission: 40 marks**  
 **Post-submission challenge: 60 marks**
 
 ## Purpose
+Use Python to investigate the supplied CSV datasets. Apply the data-science life cycle from OpenStax §15.1: **data acquisition, data exploration, data analysis, and reporting**. Your work will use Pandas DataFrames and Series, NumPy for numerical operations where useful, and Matplotlib for visualization. A graph should help answer a question; an observed relationship does not automatically prove cause and effect.
 
-In Assignment 3, you will use Python to investigate data stored in CSV files. You will apply file-processing skills from Lecture 9 and plotting techniques from Lecture 10 to complete a small data-science investigation.
-
-The assignment follows the four stages introduced in OpenStax §15.1:
-
-1. **Data acquisition** — obtain data from the supplied CSV files.
-2. **Data exploration** — inspect, clean, and visualize the data.
-3. **Data analysis** — calculate numerical summaries and identify patterns.
-4. **Reporting** — communicate your findings using graphs and a written interpretation.
-
-A graph is not decoration. It should help answer a question about the data. Do not claim that a relationship proves cause and effect.
-
+ 
 ## General requirements
-
-- Use Python and the supplied CSV files.
-- Use Python's built-in `csv` module to read the files.
+- Read the supplied CSV files in Python; do not manually type dataset values into your program.
 - **Pandas is the primary tool for reading and manipulating tabular data.** You must use DataFrames and Series operations.
 - **NumPy is permitted and encouraged** for numerical calculations. It is not compulsory to use NumPy in every question.
 - Use Matplotlib (`matplotlib.pyplot`) for the required graphs.
 - You may use Pandas plotting methods if all graph requirements are met; explicit Matplotlib commands are recommended.
-- Do **not** use dictionaries as data containers.
-- Do not manually type the dataset values into your program. Read them from the CSV files.
-- Convert CSV strings to `int` or `float` before performing numerical calculations.
-- Your program must not modify the supplied CSV files.
-- Give every graph a meaningful title and labelled axes. Include units where applicable.
-- Save each required graph as a PNG file using `plt.savefig(...)` before `plt.show()`.
+- Do not use Excel or another application to perform the analysis instead of Python. Do not modify the supplied CSV files.
+- Every graph needs a meaningful title and labelled axes, including units where appropriate. Save each graph as a PNG using `plt.savefig(...)` before `plt.show()`.
+- Organize your program into clearly named functions. Be prepared to explain your code.
+### Required tools and concepts
+
+Demonstrate suitable use of `pd.read_csv()`, `head()`, `info()` and/or `describe()`, column selection by label, Series calculations (`mean()`, `max()`, `min()`, `sum()`), Boolean filtering, missing/invalid-value handling, and Matplotlib. You may use NumPy operations such as `np.mean()` and `np.abs()`. You do not need to use every listed function; select appropriate tools for each task.
 
 ## Project setup
 
-Create a project folder named `Assignment3`. Inside it, create a Python file named `assignment3.py` and a folder named `data`.
-
-Download and extract the supplied Assignment 3 data package. Place all four CSV files inside the `data` folder.
-
-Your project must have this structure:
+Create a folder named `Assignment3`, containing `assignment3.py` and a `data` folder. Place all four supplied CSV files in `data`.
 
 ```text
 Assignment3/
@@ -52,216 +36,130 @@ Assignment3/
     └── sensor_readings_needs_cleaning.csv
 ```
 
-Install Matplotlib if it is not already installed:
+Install packages if needed:
 
 ```bash
-python -m pip install matplotlib
+python -m pip install pandas numpy matplotlib
 ```
 
-Run your program from the `Assignment3` folder so that paths such as `data/weather_readings.csv` work correctly.
+Run your program from the `Assignment3` folder.
 
 ---
 
 # Code Submission — 40 marks
 
-Submit one working Python program named `assignment3.py`. Organize your code into clearly named functions. Your program must complete all four tasks below.
+Submit one working Python program named `assignment3.py`. Complete all four tasks.
 
 ## Q1 — Read and compare weather measurements (10 marks)
 
 **File:** `data/weather_readings.csv`
 
-The file contains three columns:
+Columns: `hour`, `measured_temp_c`, and `model_temp_c`.
 
-- `hour`: hour of the day;
-- `measured_temp_c`: measured temperature in degrees Celsius;
-- `model_temp_c`: temperature predicted by a model, in degrees Celsius.
+Write `analyze_weather(filename)` that:
+1. Loads the CSV into a DataFrame using `pd.read_csv()`.
+2. Inspects the data using at least one of `head()`, `info()`, or `describe()`.
+3. Selects the three required columns by column name.
+4. Creates a line graph with measured and model temperatures on the same axes.
+5. Includes a title, labelled axes (`Hour of day`, `Temperature (°C)`), legend, and grid.
+6. Saves `weather_comparison.png`.
 
-Write a function:
-
-```python
-def read_weather_data(filename):
-    ...
-```
-
-The function must:
-
-1. Open the CSV file using `with open(filename, "r", newline="")`.
-2. Create a `csv.reader`.
-3. Skip the header row.
-4. Read the three columns using their correct indexes.
-5. Convert the hour to `int` and both temperatures to `float`.
-6. Store the columns in three separate lists.
-7. Return the three lists.
-
-Use the returned lists to create a line graph showing both measured and model temperatures on the same axes.
-
-Your graph must include:
-- a meaningful title;
-- x-axis label (`Hour of day`);
-- y-axis label (`Temperature (°C)`);
-- a legend distinguishing measured and model temperatures;
-- a grid.
-
-Save the graph as `weather_comparison.png`.
-
-**Analysis:** Calculate the mean absolute error (MAE) between measured and model temperatures:
+Calculate and print mean absolute error (MAE):
 
 ![MAE](MAE.png)
 
 
-Print the MAE with an appropriate label and unit.
+Use NumPy (`np.mean(np.abs(...))`) or an equivalent Pandas/Series calculation. Include °C in the output.
 
 ## Q2 — Investigate study hours and quiz scores (10 marks)
 
 **File:** `data/study_hours_scores.csv`
 
-The file contains a student ID, study hours, and quiz score.
+Write `analyze_study_data(filename)` that loads the file into a DataFrame, inspects it, and selects `study_hours` and `quiz_score`. Create a scatter plot with study hours on x and quiz score (%) on y. Add a title, axis labels, and grid. Save `study_hours_vs_score.png`.
 
-Write a function:
+Print the number of observations, average quiz score, highest quiz score, and study hours associated with the highest score. Use an appropriate method such as `idxmax()` to find the matching row.
 
-```python
-def read_study_data(filename):
-    ...
-```
-
-The function must read the CSV file, skip the header, convert study hours and quiz scores to `float`, store them in separate lists, and return those lists.
-
-Create a scatter plot with:
-- study hours on the x-axis;
-- quiz score (%) on the y-axis;
-- a meaningful title;
-- labelled axes;
-- a grid.
-
-Save the graph as `study_hours_vs_score.png`.
-
-Print:
-1. the number of observations;
-2. the average quiz score;
-3. the highest quiz score;
-4. the study hours associated with the highest quiz score.
-
-**Interpretation:** Write 3–4 sentences describing the pattern you observe. State one limitation of this dataset. In particular, explain why an apparent relationship does not prove that study time alone caused a score.
+Write 3–4 sentences describing the pattern and one limitation. Explain why this observational dataset does not prove study time alone caused a score.
 
 ## Q3 — Compare weekly sales (8 marks)
 
 **File:** `data/weekly_sales.csv`
 
-The file contains the day of the week, units sold, and revenue in dollars.
-
-Write a function:
-
-```python
-def read_sales_data(filename):
-    ...
-```
-
-Read the file, skip the header, and store the day names, units sold, and revenue in three separate lists. Convert the numeric columns to the appropriate numeric types.
-
-Create a bar chart showing units sold for each day. Include a title and labelled axes. Save it as `weekly_sales.png`.
-
-Print:
-1. total units sold for the week;
-2. the day with the highest number of units sold;
-3. the day with the lowest number of units sold.
-
-Use list indexes to connect a day name to its corresponding sales value.
+Write `analyze_sales(filename)` to load the DataFrame, select `day`, `units_sold`, and `revenue_dollars`, and create a bar chart of units sold by day. Include a title and labelled axes; save `weekly_sales.png`. Print total units sold, the day with the highest sales, and the day with the lowest sales. Use Pandas/Series operations and keep day labels correctly associated with their values.
 
 ## Q4 — Inspect and clean sensor readings (12 marks)
 
 **File:** `data/sensor_readings_needs_cleaning.csv`
 
-This fictional room-temperature sensor file contains:
-- a missing temperature;
-- a non-numeric entry;
-- values that are not plausible for this room-temperature investigation.
+This fictional room-temperature dataset contains a missing value, non-numeric text, and numeric values outside the plausible range for this investigation.
 
-Write a function:
+Write `clean_sensor_data(filename)` that:
+1. Loads the CSV into a DataFrame.
+2. Inspects the temperature column for missing/invalid values.
+3. Converts the temperature column to numeric using an appropriate operation; `pd.to_numeric(..., errors="coerce")` is one option.
+4. Detects and reports missing values.
+5. Detects and reports non-numeric entries.
+6. Accepts only numeric temperatures from 0°C to 50°C inclusive.
+7. Reports numeric values outside that range.
+8. Creates a cleaned DataFrame containing only accepted rows.
+9. Plots accepted temperatures against the original reading number, with title, axis labels, markers, and grid.
+10. Saves `cleaned_sensor_readings.png`.
 
-```python
-def read_and_clean_sensor_data(filename):
-    ...
-```
-
-The function must:
-
-1. Read the CSV file and skip the header.
-2. Read the reading number and temperature text from the correct columns.
-3. Detect and report an empty temperature field.
-4. Use `try`/`except ValueError` to handle a non-numeric temperature.
-5. For this assignment, accept only numeric temperatures from 0°C to 50°C, inclusive.
-6. Report values that fall outside this range.
-7. Store only accepted reading numbers and temperatures in two separate lists.
-8. Return the two lists.
-
-Create a line plot of the accepted temperatures against reading number. Include a meaningful title, labelled axes, markers, and a grid. Save it as `cleaned_sensor_readings.png`.
-
-**Important:** Do not silently remove invalid values. Your program must report why each excluded row was not accepted. The 0°C to 50°C rule is specific to this fictional dataset; it is not a universal rule for all temperature data.
-
----
+Do not silently remove invalid values or overwrite the source CSV. The 0°C–50°C rule is specific to this fictional dataset, not a universal sensor rule.
 
 ## Code submission checklist
 
-Before submitting, verify that:
+- [ ] All four files are loaded using Pandas.
+- [ ] DataFrames and named columns are used appropriately.
+- [ ] Data is inspected and numerical summaries are correct.
+- [ ] Missing, non-numeric, and out-of-range sensor values are reported.
+- [ ] All four PNG graphs are generated with suitable titles and axis labels.
+- [ ] MAE and all requested summary values are printed.
+- [ ] Q2 interpretation is included in a separate text file or clearly labelled comment.
+- [ ] Code is readable and organized into functions.
 
-- [ ] All four CSV files are read by your program.
-- [ ] Each required function is implemented and called.
-- [ ] CSV headers are skipped.
-- [ ] Numeric values are converted before calculations.
-- [ ] Missing, non-numeric, and out-of-range sensor values are handled.
-- [ ] All four graphs are generated and saved as PNG files.
-- [ ] Every graph has a meaningful title and labelled axes.
-- [ ] The weather MAE and required numerical summaries are printed.
-- [ ] Your study-hours interpretation is included in a separate text file or as a clearly labelled comment in your program.
-- [ ] Your code is readable, consistently indented, and uses meaningful variable names.
-
-## Code submission marking guide — 40 marks
+## Code marking guide
 
 | Requirement | Marks |
 |---|---:|
-| Q1: CSV reading, type conversion, two-series line plot, labels/legend/grid, MAE | 10 |
-| Q2: CSV reading, scatter plot, summaries, interpretation and limitation | 10 |
-| Q3: CSV reading, bar chart, total and highest/lowest day | 8 |
-| Q4: missing/non-numeric/range validation, cleaned lists, line plot | 12 |
+| Q1: DataFrame loading/inspection, two-series graph, formatting, MAE | 10 |
+| Q2: DataFrame/Series use, scatter plot, summaries, interpretation/limitation | 10 |
+| Q3: DataFrame loading, bar chart, total and highest/lowest day | 8 |
+| Q4: missing/non-numeric/range validation, cleaned DataFrame, line plot | 12 |
 | **Total** | **40** |
+
+Equivalent correct Pandas/NumPy approaches receive credit. Marks are for correct reasoning, results, and output—not a single required syntax.
+
 
 ---
 
 # Post-Submission Challenge — 60 marks
 
-The post-submission challenge takes place after the code submission. You must be able to explain and modify your own program. Your instructor will provide the challenge instructions and any changed data or parameters during the challenge.
+The challenge takes place after the code submission. Your instructor will provide changed data, parameters, or a new question. You may use Pandas, NumPy, and Matplotlib. You must explain your decisions and modify your own program.
+## Challenge marking guide
 
-The challenge assesses your understanding of the algorithm, not just your ability to reproduce code from memory. You may be asked to explain a change before implementing it.
-
+| Challenge | Assessment | Marks |
+|---|---|---:|
+| 1 | Correct selection/filtering, code modification, graph, summary, explanation | 20 |
+| 2 | Inspection, missing/invalid handling, cleaning, reporting, explanation | 20 |
+| 3 | DataFrame use, analysis, visualization, interpretation, limitation | 20 |
+| **Total** | | **60** |
 ---
 
 ## Submission requirements
 
-Submit the following items:
-
-1. `assignment3.py`
-2. The four supplied CSV files inside the `data` folder.
-3. The four generated PNG graphs:
-   - `weather_comparison.png`
-   - `study_hours_vs_score.png`
-   - `weekly_sales.png`
-   - `cleaned_sensor_readings.png`
-4. A short interpretation for Q2 (3–4 sentences).
-
-Compress your `Assignment3` folder into one ZIP file and submit it through the course submission system.
-
-Your program must run from the submitted folder. Test it after extracting your ZIP file to a different folder. Do not submit only screenshots of code or graphs.
-
+Submit `assignment3.py`, all four CSV files in the `data` folder, all four generated PNG graphs, and your Q2 interpretation. Zip the complete `Assignment3` folder and submit it through the course submission system. Test the program after extracting the ZIP into a different folder. Do not submit only screenshots.
 ## Academic expectations
 
-- You are responsible for understanding every line of the submitted program.
-- Be prepared to explain your file paths, CSV column indexes, type conversions, lists, loops, conditions, exception handling, and plotting commands.
-- You may consult the lecture notes and OpenStax §15.1 while preparing.
-- During the post-submission challenge, you must complete the assigned modification yourself and explain your decisions.
+You are responsible for understanding every line of your program. Be prepared to explain DataFrames, Series, column selection, data types, indexing, filtering, missing-value handling, numerical summaries, and plotting. You may consult the lecture notes and OpenStax Chapter 15 while preparing. The post-submission modification must be completed by you.
 
 ## References
 
 - Lecture 9: *File I/O — Turning a Program Into a Data Processor*.
 - Lecture 10: *Plotting Graphs — From CSV Data to Visual Evidence*.
-- Das, U., Lawson, A., Mayfield, C., & Norouzi, N. (2024). *Introduction to Python Programming*. OpenStax, §15.1, “Introduction to Data Science.”  
-  https://openstax.org/books/introduction-python-programming/pages/15-1-introduction-to-data-science
+- Das, U., Lawson, A., Mayfield, C., & Norouzi, N. (2024). *Introduction to Python Programming*. OpenStax, Chapter 15, especially §§15.1–15.5:
+  - https://openstax.org/books/introduction-python-programming/pages/15-1-introduction-to-data-science
+  - https://openstax.org/books/introduction-python-programming/pages/15-2-numpy
+  - https://openstax.org/books/introduction-python-programming/pages/15-3-pandas
+  - https://openstax.org/books/introduction-python-programming/pages/15-4-exploratory-data-analysis
+  - https://openstax.org/books/introduction-python-programming/pages/15-5-data-visualization
