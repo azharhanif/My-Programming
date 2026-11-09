@@ -1,0 +1,9 @@
+week,lab_temperature_c,sensor_status
+1,21.2,OK
+2,21.5,OK
+3,,OK
+4,22.1,OK
+5,21.8,OK
+6,,MAINTENANCE
+7,22.0,OK
+8,21.7,OK
