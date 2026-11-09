@@ -23,9 +23,10 @@ A graph is not decoration. It should help answer a question about the data. Do n
 
 - Use Python and the supplied CSV files.
 - Use Python's built-in `csv` module to read the files.
-- Use Matplotlib (`matplotlib.pyplot`) to create the required graphs.
-- Use lists, loops, conditionals, functions, and column indexes to process the data.
-- Do **not** use Pandas or NumPy for this assignment.
+- **Pandas is the primary tool for reading and manipulating tabular data.** You must use DataFrames and Series operations.
+- **NumPy is permitted and encouraged** for numerical calculations. It is not compulsory to use NumPy in every question.
+- Use Matplotlib (`matplotlib.pyplot`) for the required graphs.
+- You may use Pandas plotting methods if all graph requirements are met; explicit Matplotlib commands are recommended.
 - Do **not** use dictionaries as data containers.
 - Do not manually type the dataset values into your program. Read them from the CSV files.
 - Convert CSV strings to `int` or `float` before performing numerical calculations.
