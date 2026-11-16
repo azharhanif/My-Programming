@@ -61,6 +61,15 @@ python -m pip install seaborn
 Ref: What is Seaborn: 
 ```
 https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme()
+
+tips = sns.load_dataset("tips")
+print(tips)
+sns.relplot(data=tips, x="total_bill", y="tip", hue="smoker", col="time")
+plt.show()
 ```
 Import Matplotlib:
 
