@@ -80,6 +80,8 @@ The following table illustrates how seaborn integrates with other Python librari
 ```
 https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
 https://seaborn.pydata.org/generated/seaborn.kdeplot.html
+#####################################
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme()
