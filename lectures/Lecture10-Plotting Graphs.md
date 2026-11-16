@@ -198,3 +198,116 @@ plt.grid(True, alpha=0.3)
 plt.show()
 
 ```
+## One Seaborn command can create a more informative histogram
+Let's use the same `car_crashes` dataset and the `total` column in both examples earlier.
+
+The key difference will be that Seaborn can add a KDE density curve and distinguish observations by category without manually calculating separate distributions.
+
+#### Without Seaborn — Matplotlib histogram
+```
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
+
+car_crashes = sns.load_dataset("car_crashes")
+
+plt.figure(figsize=(9, 5))
+
+plt.hist(
+    car_crashes["total"],
+    bins=8,
+    edgecolor="black",
+    color="skyblue"
+)
+
+plt.title("Distribution of Total Car Crashes")
+plt.xlabel("Total crashes per billion miles")
+plt.ylabel("Number of states")
+
+plt.gca().xaxis.set_major_locator(MultipleLocator(2))
+plt.gca().yaxis.set_major_locator(MultipleLocator(2))
+
+plt.grid(axis="y", alpha=0.3)
+plt.show()
+```
+This displays the number of states in each interval.
+#### With Seaborn — Histogram plus KDE curve
+More informative visualization
+```
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
+
+car_crashes = sns.load_dataset("car_crashes")
+
+plt.figure(figsize=(9, 5))
+
+sns.histplot(
+    data=car_crashes,
+    x="total",
+    bins=8,
+    kde=True,  #Seaborn automatically overlays a Kernel Density Estimate curve on the histogram.
+    color="steelblue",
+    edgecolor="black"
+)
+
+plt.title("Distribution of Total Car Crashes with KDE")
+plt.xlabel("Total crashes per billion miles")
+plt.ylabel("Number of states")
+
+plt.gca().xaxis.set_major_locator(MultipleLocator(2))
+plt.grid(axis="y", alpha=0.3)
+
+plt.show()
+
+```
+Now see both:
+- Histogram bars: How many states fall into each interval.
+- KDE curve: The estimated shape of the underlying distribution.
+#### A second advantage — Compare two groups in one histogram
+Here is where Seaborn becomes particularly useful.
+
+The dataset includes a `speeding` variable. We can divide states into two groups based on whether their speeding-related crash rate is below or above the median.
+```
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+car_crashes = sns.load_dataset("car_crashes")
+
+# Create two groups
+median_speeding = car_crashes["speeding"].median()
+
+car_crashes["speeding_group"] = (
+    car_crashes["speeding"] > median_speeding
+).map({
+    True: "Above median",
+    False: "At or below median"
+})
+
+plt.figure(figsize=(10, 5))
+
+sns.histplot(
+    data=car_crashes,
+    x="total",
+    hue="speeding_group",
+    bins=8,
+    kde=True,
+    element="step",
+    stat="density",
+    common_norm=False,
+    alpha=0.3
+)
+
+plt.title("Crash Distribution by Speeding Group")
+plt.xlabel("Total crashes per billion miles")
+plt.ylabel("Density")
+
+plt.show()
+
+```
+Notice that we did not have to manually split the `DataFrame` into two groups and draw two separate distributions. Seaborn handles the grouping through `hue`.
+
+
