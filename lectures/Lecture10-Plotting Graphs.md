@@ -60,7 +60,7 @@ import matplotlib.pyplot as plt
 Let's compare the same car-crashes dataset using a histogram in two ways:
 - Without Seaborn: Using Matplotlib's plt.hist().
 - With Seaborn: Using sns.histplot().
-Both examples use the same total column, six bins, and matching axis intervals so students can compare them fairly.
+Both examples use the same total column, six bins, and matching axis intervals.
 
 ####  Histogram without Seaborn (Matplotlib)
 ```
