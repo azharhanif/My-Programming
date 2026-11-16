@@ -58,7 +58,10 @@ For the optional density-plot activity, also install Seaborn:
 ``` bash
 python -m pip install seaborn
 ```
-
+Ref: What is Seaborn: 
+```
+https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
+```
 Import Matplotlib:
 
 ``` python
