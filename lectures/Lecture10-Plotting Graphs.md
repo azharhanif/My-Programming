@@ -56,58 +56,6 @@ Import Matplotlib:
 import matplotlib.pyplot as plt
 ```
 
-
-## Extension --- Density plot (KDE)
-
-A density plot is a smoothed estimate of a numerical distribution. It is
-related to a histogram, but it does not show counts in discrete bins.
-
-Install Seaborn if needed:
-
-```
-https://seaborn.pydata.org/generated/seaborn.kdeplot.html
-
-python -m pip install seaborn
-```
-
-Then run:
-
-``` python
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-from matplotlib.ticker import MultipleLocator
-
-# Load sample dataset
-car_crashes = sns.load_dataset("car_crashes")
-
-# Display the first five rows
-print(car_crashes.head())
-
-# Create KDE plot using one numerical column
-plt.figure(figsize=(9, 5))
-
-sns.kdeplot(
-    data=car_crashes,
-    x="total",
-    fill=True,
-    color="steelblue"
-)
-
-# Add title and axis labels
-plt.title("Distribution of Total Car Crashes")
-plt.xlabel("Total crashes per billion miles")
-plt.ylabel("Estimated density")
-
-# Set major units (tick intervals)
-plt.gca().xaxis.set_major_locator(MultipleLocator(2))
-plt.gca().yaxis.set_major_locator(MultipleLocator(0.05))
-
-plt.grid(True, alpha=0.3)
-plt.show()
-
-```
-
 ### Compare the histogram  
 Let's compare the same car-crashes dataset using a histogram in two ways:
 - Without Seaborn: Using Matplotlib's plt.hist().
@@ -200,3 +148,53 @@ Appearance	                More manual control	    Convenient statistical stylin
 DataFrame integration	Direct Series selection	    Direct column selection
 ```
 
+## Extension --- Density plot (KDE)
+
+A density plot is a smoothed estimate of a numerical distribution. It is
+related to a histogram, but it does not show counts in discrete bins.
+
+Install Seaborn if needed:
+
+```
+https://seaborn.pydata.org/generated/seaborn.kdeplot.html
+
+python -m pip install seaborn
+```
+
+Then run:
+
+``` python
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
+
+# Load sample dataset
+car_crashes = sns.load_dataset("car_crashes")
+
+# Display the first five rows
+print(car_crashes.head())
+
+# Create KDE plot using one numerical column
+plt.figure(figsize=(9, 5))
+
+sns.kdeplot(
+    data=car_crashes,
+    x="total",
+    fill=True,
+    color="steelblue"
+)
+
+# Add title and axis labels
+plt.title("Distribution of Total Car Crashes")
+plt.xlabel("Total crashes per billion miles")
+plt.ylabel("Estimated density")
+
+# Set major units (tick intervals)
+plt.gca().xaxis.set_major_locator(MultipleLocator(2))
+plt.gca().yaxis.set_major_locator(MultipleLocator(0.05))
+
+plt.grid(True, alpha=0.3)
+plt.show()
+
+```
