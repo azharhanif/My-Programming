@@ -58,10 +58,28 @@ For the optional density-plot activity, also install Seaborn:
 ``` bash
 python -m pip install seaborn
 ```
-Ref: What is Seaborn: 
+## What is Seaborn:
+Python provides several libraries for data visualization, but some require significant customization and manual configuration. Seaborn simplifies this process by offering high-level functions that automatically generate visually appealing statistical plots.
+
+One of the defining characteristics of seaborn is its ability to work directly with structured datasets such as pandas DataFrames. This integration allows users to generate visualizations without extensive data manipulation.
+
+When learning data visualization with seaborn, it becomes clear that the library focuses heavily on statistical visualization rather than simple plotting. Many of its functions automatically compute statistical relationships and display them visually.
+
+## Key Features Of Seaborn
+Seaborn provides a range of features that make it one of the most widely used data visualization tools in the Python ecosystem.
+![overview logo](seaborn.jpg)
+One important feature involves automatic styling and color palettes that produce visually appealing graphs by default. This eliminates the need for extensive customization that is often required when using lower-level visualization libraries.
+
+Another important capability involves statistical plotting functions that visualize distributions, relationships, and categorical comparisons.
+
+Understanding what seaborn is requires recognizing how these features simplify exploratory data analysis and make visual insights easier to discover.
+
+The following table illustrates how seaborn integrates with other Python libraries.
+
+![table logo](seaborn2.jpg)
 ```
 https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
-
+https://seaborn.pydata.org/generated/seaborn.kdeplot.html
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme()
