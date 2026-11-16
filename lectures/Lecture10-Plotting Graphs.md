@@ -65,6 +65,9 @@ https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme()
+# Use sns.load_dataset("name") to load any built‑in Seaborn dataset 
+# such as "iris", "tips", or "titanic" into a pandas DataFrame.
+print(sns.get_dataset_names())
 
 tips = sns.load_dataset("tips")
 print(tips)
