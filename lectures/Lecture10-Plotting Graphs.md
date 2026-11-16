@@ -1,7 +1,7 @@
 # Lecture 10 Extension: Plotting Graphs --- Seaborn
 
 
-## 1. Prepare your Python environment
+## 1.0 Prepare your Python environment
 
 Install Matplotlib:
 
@@ -14,14 +14,14 @@ For the optional density-plot activity, also install Seaborn:
 ``` bash
 python -m pip install seaborn
 ```
-## What is Seaborn:
+## 2.0 What is Seaborn:
 Python provides several libraries for data visualization, but some require significant customization and manual configuration. Seaborn simplifies this process by offering high-level functions that automatically generate visually appealing statistical plots.
 
 One of the defining characteristics of seaborn is its ability to work directly with structured datasets such as pandas DataFrames. This integration allows users to generate visualizations without extensive data manipulation.
 
 When learning data visualization with seaborn, it becomes clear that the library focuses heavily on statistical visualization rather than simple plotting. Many of its functions automatically compute statistical relationships and display them visually.
 
-## Key Features Of Seaborn
+## 3.0 Key Features Of Seaborn
 Seaborn provides a range of features that make it one of the most widely used data visualization tools in the Python ecosystem.
 ![overview logo](seaborn.jpg)
 One important feature involves automatic styling and color palettes that produce visually appealing graphs by default. This eliminates the need for extensive customization that is often required when using lower-level visualization libraries.
@@ -56,13 +56,13 @@ Import Matplotlib:
 import matplotlib.pyplot as plt
 ```
 
-### Compare the histogram  
+#### 3.1 Compare the histogram  
 Let's compare the same car-crashes dataset using a histogram in two ways:
 - Without Seaborn: Using Matplotlib's plt.hist().
 - With Seaborn: Using sns.histplot().
 Both examples use the same total column, six bins, and matching axis intervals.
 
-####  Histogram without Seaborn (Matplotlib)
+#### 3.2 Histogram without Seaborn (Matplotlib)
 ```
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -97,12 +97,13 @@ plt.show()
 ```
 
 What is happening?
+
 - plt.hist() creates the histogram.
 - bins=6 divides the data range into six intervals.
 - edgecolor makes the boundaries of the bars visible.
 - The y-axis displays the number of states in each interval.
 
-#### Histogram with Seaborn
+#### 3.3 Histogram with Seaborn
 ```
 
 import seaborn as sns
@@ -135,7 +136,7 @@ plt.grid(axis="y", alpha=0.3)
 plt.show()
 
 ```
-#### Compare the two approaches
+#### 3.4 Compare the two approaches
 
 Matplotlib vs Seaborn
 ```
@@ -148,7 +149,7 @@ Appearance	                More manual control	    Convenient statistical stylin
 DataFrame integration	Direct Series selection	    Direct column selection
 ```
 
-## Extension --- Density plot (KDE)
+## 4.0 Extension --- Density plot (KDE)
 
 A density plot is a smoothed estimate of a numerical distribution. It is
 related to a histogram, but it does not show counts in discrete bins.
@@ -198,12 +199,12 @@ plt.grid(True, alpha=0.3)
 plt.show()
 
 ```
-## One Seaborn command can create a more informative histogram
+## 5.0 One Seaborn command can create a more informative histogram
 Let's use the same `car_crashes` dataset and the `total` column in both examples earlier.
 
 The key difference will be that Seaborn can add a KDE density curve and distinguish observations by category without manually calculating separate distributions.
 
-#### Without Seaborn — Matplotlib histogram
+#### 5.1 Without Seaborn — Matplotlib histogram
 ```
 
 import seaborn as sns
@@ -232,7 +233,7 @@ plt.grid(axis="y", alpha=0.3)
 plt.show()
 ```
 This displays the number of states in each interval.
-#### With Seaborn — Histogram plus KDE curve
+#### 5.2 With Seaborn — Histogram plus KDE curve
 More informative visualization
 ```
 
@@ -266,7 +267,7 @@ plt.show()
 Now see both:
 - Histogram bars: How many states fall into each interval.
 - KDE curve: The estimated shape of the underlying distribution.
-#### A second advantage — Compare two groups in one histogram
+#### 5.3 A second advantage — Compare two groups in one histogram
 Here is where Seaborn becomes particularly useful.
 
 The dataset includes a `speeding` variable. We can divide states into two groups based on whether their speeding-related crash rate is below or above the median.
