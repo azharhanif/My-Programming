@@ -188,14 +188,15 @@ plt.show()
 
 ```
 #### Compare the two approaches
-```
+
 Matplotlib vs Seaborn
-Feature	Matplotlib	Seaborn
-Function	plt.hist()	sns.histplot()
-Data input	Series or array	DataFrame + column name
-Bins	bins=6	bins=6
-Axis labels	Manual	Manual
-Appearance	More manual control	Convenient statistical styling
-DataFrame integration	Direct Series selection	Direct column selection
+```
+Feature	                    Matplotlib	            Seaborn
+Function	                plt.hist()	            sns.histplot()
+Data input	                Series or array	        DataFrame + column name
+Bins	                    bins=6	                bins=6
+Axis labels	                Manual	                Manual
+Appearance	                More manual control	    Convenient statistical styling
+DataFrame integration	Direct Series selection	    Direct column selection
 ```
 
