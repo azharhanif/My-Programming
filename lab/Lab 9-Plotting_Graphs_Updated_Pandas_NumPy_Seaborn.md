@@ -78,19 +78,7 @@ import seaborn as sns
 
 Keep your Python file and the `data` folder in the same project folder:
 
-```text
-Lecture10/
-│
-├── plotting_practice.py
-└── data/
-    ├── weather_readings.csv
-    ├── study_hours_scores.csv
-    ├── weekly_sales.csv
-    ├── exam_scores.csv
-    └── sensor_readings_needs_cleaning.csv
-```
-
-The examples use paths such as `"data/weather_readings.csv"`. In Google Colab, upload the CSV file(s) to the session or mount Google Drive, then adjust the path.
+The examples use paths such as `"data/weather_readings.csv"`. 
 
 ## 2. First task: load and inspect a CSV file with Pandas
 
